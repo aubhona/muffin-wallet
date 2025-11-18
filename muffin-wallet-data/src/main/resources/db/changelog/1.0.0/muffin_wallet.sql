@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS muffin_wallet (
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 )
---rollback drop table maffin_wallet;
+--rollback drop table muffin_wallet;
