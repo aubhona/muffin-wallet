@@ -60,6 +60,7 @@ public class DefaultMuffinWalletRepository implements MuffinWalletRepository {
 
   @Override
   public List<MuffinWallet> findByIdInForUpdate(List<UUID> ids) {
+    namedParameterJdbcTemplate.getJdbcTemplate().execute("select pg_sleep(0.15)");
     return namedParameterJdbcTemplate.query(
         "select * from muffin_wallet where id in (:ids) for update",
         Map.of("ids", ids),

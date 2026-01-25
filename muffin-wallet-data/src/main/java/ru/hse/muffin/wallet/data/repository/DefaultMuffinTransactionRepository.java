@@ -30,6 +30,7 @@ public class DefaultMuffinTransactionRepository implements MuffinTransactionRepo
 
   @Override
   public MuffinTransaction save(MuffinTransaction transaction) {
+    namedParameterJdbcTemplate.getJdbcTemplate().execute("select pg_sleep(0.1)");
     return namedParameterJdbcTemplate.queryForObject(
         """
         insert into muffin_transaction (id, amount, from_muffin_wallet_id, to_muffin_wallet_id)
