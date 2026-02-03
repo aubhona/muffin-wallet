@@ -1,9 +1,19 @@
 ---
+spring:
+  application:
+    name: muffin-wallet
+
 management:
   endpoints:
     web:
       exposure:
         include: health, prometheus
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_ENDPOINT:http://localhost:9411/api/v2/spans}
 
 
 springdoc:
@@ -12,3 +22,7 @@ springdoc:
     urls:
       - name: muffin-wallet-api-v1
         url: /openapi/muffin-wallet-api-v1.yaml
+
+muffin:
+  currency:
+    url: muffin-currency:8083

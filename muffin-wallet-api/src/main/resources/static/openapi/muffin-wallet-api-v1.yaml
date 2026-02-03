@@ -111,6 +111,10 @@ components:
         amount:
           type: number
           format: decimal
+        from_currency:
+          type: string
+        to_currency:
+          type: string
         created_at:
           type: string
           format: date-time        
@@ -122,6 +126,12 @@ components:
         amount:
           type: number
           format: decimal
+        from_currency:
+          type: string
+          enum: [CARAMEL, CHOKOLATE, PLAIN]
+        to_currency:
+          type: string
+          enum: [CARAMEL, CHOKOLATE, PLAIN]
     CreateMuffinWallet:
       properties:
         owner_name:

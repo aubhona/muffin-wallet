@@ -34,6 +34,10 @@ public interface MuffinWalletMapper {
   @Mapping(target = "id", ignore = true)
   @Mapping(target = "createdAt", ignore = true)
   @Mapping(target = "fromMuffinWalletId", source = "fromMuffinWalletId")
+  @Mapping(target = "toMuffinWalletId", source = "transactionMuffinTo.toMuffinWalletId")
+  @Mapping(target = "amount", source = "transactionMuffinTo.amount")
+  @Mapping(target = "fromCurrency", source = "transactionMuffinTo.fromCurrency")
+  @Mapping(target = "toCurrency", source = "transactionMuffinTo.toCurrency")
   ru.hse.muffin.wallet.server.dto.MuffinTransaction apiDtoToMuffinTransactionServiceDto(
       UUID fromMuffinWalletId,
       ru.hse.muffin.wallet.api.dto.TransactionMuffinTo transactionMuffinTo);

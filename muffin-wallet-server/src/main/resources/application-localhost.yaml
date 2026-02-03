@@ -4,3 +4,12 @@ spring:
     url: jdbc:postgresql://localhost:5432/muffin_wallet
     username: muffin-wallet
     password: muffin-wallet
+
+management:
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+
+muffin:
+  currency:
+    url: localhost:8080

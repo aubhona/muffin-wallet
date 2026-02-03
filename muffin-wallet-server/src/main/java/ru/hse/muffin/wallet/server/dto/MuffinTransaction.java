@@ -16,5 +16,9 @@ public class MuffinTransaction {
 
   private UUID toMuffinWalletId;
 
+  private String fromCurrency;
+
+  private String toCurrency;
+
   private OffsetDateTime createdAt;
 }
